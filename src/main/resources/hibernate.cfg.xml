@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.org/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <!-- a SessionFactory instance listed as /jndi/name -->
+    <session-factory>
+        <!-- properties -->
+        <!-- Para la config de Hibernate -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- Poner base de datos en la linea de abajo -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/practicaempresa</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <!--Esto hay que añadirlo-->
+        <mapping class="com.example.gestionpracticasempresahibernate.domain.student.Student"/>
+        <mapping class="com.example.gestionpracticasempresahibernate.domain.company.Company"/>
+        <mapping class="com.example.gestionpracticasempresahibernate.domain.teacher.Teacher"/>
+        <mapping class="com.example.gestionpracticasempresahibernate.domain.activity.Activity"/>
+    </session-factory>
+</hibernate-configuration>

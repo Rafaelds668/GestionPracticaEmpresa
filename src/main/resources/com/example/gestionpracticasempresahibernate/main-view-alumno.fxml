@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpracticasempresahibernate.controllers.MainViewAlumnoController">
+   <children>
+      <BorderPane>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+                        <MenuItem mnemonicParsing="false" onAction="#informacionEmpresa" text="Informacion Empresa " />
+                        <MenuItem mnemonicParsing="false" onAction="#informacionTutor" text="Informacion  Tutor/a" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="502.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="21.0" layoutY="24.0" text="Hola, Alumno">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="296.0" layoutY="77.0" text="Editar Tarea: ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboEditarTarea" layoutX="388.0" layoutY="77.0" prefHeight="25.0" prefWidth="84.0" />
+                  <GridPane layoutX="-4.0" layoutY="119.0" prefHeight="338.0" prefWidth="750.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <Label layoutX="28.0" layoutY="2.0" text="Añadir tarea">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="28.0" layoutY="27.0" text="Actividad realizada: ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtActividad" layoutX="28.0" layoutY="47.0" />
+                              <Label layoutX="27.0" layoutY="82.0" text="Observaciones">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtObservacion" layoutX="28.0" layoutY="112.0" />
+                              <Label layoutX="28.0" layoutY="152.0" text="Fecha">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="dateFecha" layoutX="72.0" layoutY="150.0" prefHeight="25.0" prefWidth="78.0" />
+                              <Label layoutX="27.0" layoutY="194.0" text="Total de Practicas">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Spinner fx:id="spTotal" layoutX="150.0" layoutY="190.0" prefHeight="25.0" prefWidth="58.0" />
+                              <Label layoutX="30.0" layoutY="227.0" text="T`ipo de Practica">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="rbFCT" layoutX="29.0" layoutY="255.0" mnemonicParsing="false" text="FCT" />
+                              <RadioButton fx:id="rbDual" layoutX="94.0" layoutY="255.0" mnemonicParsing="false" text="Dual" />
+                              <Button fx:id="btnAñadir" layoutX="121.0" layoutY="299.0" mnemonicParsing="false" text="Añadir" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane GridPane.columnIndex="1">
+                           <children>
+                              <Label layoutX="14.0" layoutY="2.0" text="Lista de Tareas">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tvActividad" layoutX="-3.0" layoutY="43.0" prefHeight="200.0" prefWidth="402.0">
+                                <columns>
+                                  <TableColumn fx:id="cActividad" prefWidth="75.0" text="Actividad" />
+                                  <TableColumn fx:id="cObservacion" prefWidth="93.0" text="Observaciones" />
+                                    <TableColumn fx:id="cFecha" prefWidth="75.0" text="Fecha" />
+                                    <TableColumn fx:id="cHora" text="Hora" />
+                                    <TableColumn fx:id="cPractica" prefWidth="78.0" text="Practica" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Label fx:id="infoHorasDual" layoutX="37.0" layoutY="259.0" text="Horas Realizadas dual: X Horas Restantes Dual: X">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="infoHorasFCT" layoutX="42.0" layoutY="294.0" text="Horas Realizadas FCT: X Horas Restantes FCT: X">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>
