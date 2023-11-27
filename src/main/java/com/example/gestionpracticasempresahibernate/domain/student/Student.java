@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class Student {
     private String last_name;
     private String password;
     private String dni;
-    private Date date_of_birth;
+    private LocalDate date_of_birth;
     private String email;
     private String contact_phone;
     private Integer total_dual_hours;

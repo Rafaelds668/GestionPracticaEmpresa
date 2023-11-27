@@ -4,53 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/CrearAlumnoViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/CrearEmpresaViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarAlumnoViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarEmpresaViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarTareaViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/InfoAlumnoViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewAlumnoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewProfesorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/activity/Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/activity/ActivityDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/activity/PracticeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/company/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/company/CompanyDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/student/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/student/StudentDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/teacher/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/teacher/TeacherDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/crear-alumno-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/crear-empresa-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/editar-alumno-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/editar-empresa-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/editar-tarea-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/info-alumno-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/login-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/main-view-alumno.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/main-view-profesor.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Incluido en la tabla a los alumnos de los profesores">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/CrearAlumnoViewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewProfesorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewProfesorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/student/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/teacher/TeacherDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/teacher/TeacherDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/crear-alumno-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +46,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/rafae/Downloads/GestionPracticasEmpresa(Login funcional)/GestionPracticasEmpresa",
+    "last_opened_file_path": "C:/Users/rafae/Downloads/GestorJuegos (1)/GestorJuegos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -129,8 +89,18 @@
       <option name="presentableId" value="Default" />
       <updated>1701085544006</updated>
       <workItem from="1701085546205" duration="3023000" />
-      <workItem from="1701099406673" duration="8641000" />
+      <workItem from="1701099406673" duration="8888000" />
+      <workItem from="1701113833247" duration="3452000" />
     </task>
+    <task id="LOCAL-00001" summary="Incluido en la tabla a los alumnos de los profesores">
+      <option name="closed" value="true" />
+      <created>1701108512176</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701108512180</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,5 +108,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Incluido en la tabla a los alumnos de los profesores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Incluido en la tabla a los alumnos de los profesores" />
   </component>
 </project>

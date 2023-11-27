@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainViewProfesorController implements Initializable {
 
@@ -150,10 +152,104 @@ public class MainViewProfesorController implements Initializable {
 
     @javafx.fxml.FXML
     public void insertStudent(ActionEvent actionEvent) {
+        if(txtNombre.getText().length() < 3){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("El nombre debe tener minimo 3 caracteres");
+            alert.show();
+        }
+        else if(txtApellidos.getText().length() < 3){
+            Alert alert = new Alert( Alert.AlertType.WARNING );
+            alert.setContentText( "El apellido debe tener minimo 3 caracteres" );
+            alert.show();
+        }
+        else if(passContrasenya.getText().length() < 4){
+            Alert alert = new Alert( Alert.AlertType.WARNING );
+            alert.setContentText( "La contraseña debe tener minimo 4 caracteres" );
+            alert.show();
+        }
+        else if(!comprobarDNI(txtDNI.getText())){
+            Alert alert = new Alert( Alert.AlertType.WARNING );
+            alert.setContentText( "Formato del DNI incorrecto" );
+            alert.show();
+        }
+        else if(!comprobarEmail(txtEmail.getText())){
+            Alert alert = new Alert( Alert.AlertType.WARNING );
+            alert.setContentText( "Formato del Correo electronico incorrecto" );
+            alert.show();
+        }
+        else if(dataFecha.getValue() == null){
+            Alert alert = new Alert( Alert.AlertType.WARNING );
+            alert.setContentText( "Debe rellenar la fecha de nacimiento" );
+            alert.show();
+        }
+        else if(!comprobarTelefono(txtTelef.getText())){
+            Alert alert = new Alert( Alert.AlertType.WARNING );
+            alert.setContentText( "Formato del numero de telefono incorrecto236+" );
+            alert.show();
+        } else {
+            Student student = new Student();
+            student.setTutor(Session.getCurrentTeacher());
+            student.setFirst_name(txtNombre.getText());
+            student.setLast_name(txtApellidos.getText());
+            student.setPassword(passContrasenya.getText());
+            student.setDni(txtDNI.getText());
+            student.setEmail(txtEmail.getText());
+            student.setDate_of_birth(dataFecha.getValue());
+            student.setContact_phone(txtTelef.getText());
+            student.setObservations(txtObservaciones.getText());
+            student.setCompany(teacherDAOImp.nombreCompañia((String) comboEmpresa.getValue()));
+            student.setDiary_activities(new ArrayList<>());
+            student.setTotal_fct_hours(0);
+            student.setTotal_dual_hours(0);
+            teacherDAOImp.addAlumno(student);
+            cargarTabla();
+        }
+
+    }
+
+    private boolean comprobarDNI (String dni){
+        boolean salida = true;
+        if(dni.length() != 9 || !Character.isLetter(dni.charAt(8))) salida = false;
+        else {
+            try {
+                Integer.parseInt(dni.substring(0,8));
+            } catch (Exception e) {
+                salida = false;
+            }
+        }
+        return salida;
+    }
+
+    private boolean comprobarEmail( String email ) {
+        boolean salida;
+        // Patrón para validar el email
+        Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+
+        Matcher mather = pattern.matcher( email);
+
+        if (mather.find( )) {
+            salida = true;
+        } else {
+            salida = false;
+        }
+        return salida;
+    }
+
+    private boolean comprobarTelefono( String tel ) {
+        boolean salida = true;
+        try {
+            Integer.parseInt(tel);
+        } catch (NumberFormatException excepcion) {
+            salida = false;
+        }
+        return salida;
     }
 
     @javafx.fxml.FXML
     public void detallesAlumno(ActionEvent actionEvent) {
+        if(Session.getCurrentStudent() != null) Main.loadFXML("editar-alumno-view.fxml", "Detalles del alumno " + Session.getCurrentStudent().getFirst_name());
     }
 
     @javafx.fxml.FXML

@@ -2,7 +2,9 @@ package com.example.gestionpracticasempresahibernate.domain.teacher;
 
 import com.example.gestionpracticasempresahibernate.domain.DAO;
 import com.example.gestionpracticasempresahibernate.domain.HibernateUtil;
+import com.example.gestionpracticasempresahibernate.domain.company.Company;
 import com.example.gestionpracticasempresahibernate.domain.student.Student;
+import lombok.extern.java.Log;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -10,6 +12,7 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+@Log
 public class TeacherDAOImp implements DAO<Teacher> {
     @Override
     public ArrayList<Teacher> getAll() {
@@ -84,6 +87,7 @@ public class TeacherDAOImp implements DAO<Teacher> {
         }));
     }
 
+    //Obteniene el profesor del alumno, la cual se usa para inicializar la tabla e incluir los datos
     public List<Student> alumnoDeProfesor(Teacher teacher ) {
         List<Student> salida = new ArrayList<>( );
         try ( Session s = HibernateUtil.getSessionFactory( ).openSession( ) ) {
@@ -94,11 +98,23 @@ public class TeacherDAOImp implements DAO<Teacher> {
         return salida;
     }
 
+    //Obtiene el id del alumno, usado para meter en un lista al usuario
     public Student alumnoPorId( Long id ) {
         Student salida = null;
         try ( Session s = HibernateUtil.getSessionFactory( ).openSession( ) ) {
             Query<Student> q = s.createQuery( "from Student where student_id =: i" , Student.class );
             q.setParameter( "i" , id );
+            salida = q.getSingleResult();
+        }
+        return salida;
+    }
+
+    //Obtiene el nombre de la compañía para usarlo en el combobox
+    public Company nombreCompañia(String companyName ) {
+        Company salida = null;
+        try ( Session s = HibernateUtil.getSessionFactory( ).openSession( ) ) {
+            Query<Company> q = s.createQuery( "from Company where company_name =: name" , Company.class );
+            q.setParameter( "name" , companyName );
             salida = q.getSingleResult();
         }
         return salida;
@@ -126,5 +142,30 @@ public class TeacherDAOImp implements DAO<Teacher> {
             }
         }
         return result;
+    }
+
+    public void addAlumno(Student student) {
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            Transaction transaction = session.beginTransaction();
+            //Crear un nuevo alumno
+            Student newAlumno = new Student();
+            newAlumno.setDni( student.getDni() );
+            newAlumno.setCompany( student.getCompany() );
+            newAlumno.setPassword( student.getPassword() );
+            newAlumno.setEmail( student.getEmail() );
+            newAlumno.setContact_phone( student.getContact_phone() );
+            newAlumno.setDiary_activities( student.getDiary_activities() );
+            newAlumno.setDate_of_birth( student.getDate_of_birth() );
+            newAlumno.setTotal_dual_hours( student.getTotal_dual_hours() );
+            newAlumno.setFirst_name( student.getFirst_name() );
+            newAlumno.setLast_name( student.getLast_name() );
+            newAlumno.setTotal_fct_hours( student.getTotal_fct_hours() );
+            newAlumno.setObservations( student.getObservations() );
+            newAlumno.setTutor( student.getTutor() );
+            session.persist(newAlumno);
+            transaction.commit();
+        }catch (Exception e){
+            log.severe("Error al insertar un nuevo alumno");
+        }
     }
 }
