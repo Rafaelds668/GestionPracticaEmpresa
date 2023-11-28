@@ -184,7 +184,7 @@ public class MainViewProfesorController implements Initializable {
         }
         else if(!comprobarTelefono(txtTelef.getText())){
             Alert alert = new Alert( Alert.AlertType.WARNING );
-            alert.setContentText( "Formato del numero de telefono incorrecto236+" );
+            alert.setContentText( "Formato del numero de telefono incorrecto" );
             alert.show();
         } else {
             Student student = new Student();
@@ -255,6 +255,8 @@ public class MainViewProfesorController implements Initializable {
     @javafx.fxml.FXML
     public void empresas(ActionEvent actionEvent) {
     }
+
+
 
 
 }

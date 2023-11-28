@@ -168,4 +168,29 @@ public class TeacherDAOImp implements DAO<Teacher> {
             log.severe("Error al insertar un nuevo alumno");
         }
     }
+
+    public void deleteAlumno(Student alumno){
+        HibernateUtil.getSessionFactory().inTransaction((session -> {
+            Student student = session.get(Student.class, alumno.getStudent_id());
+            session.remove(student);
+        }));
+    }
+
+    public void updateAlumno (Student student){
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            Transaction transaction = session.beginTransaction();
+            Student alumno = session.get(Student.class, student.getStudent_id());
+
+            alumno.setFirst_name( student.getFirst_name() );
+            alumno.setLast_name( student.getLast_name() );
+            alumno.setDni( student.getDni() );
+            alumno.setDate_of_birth( student.getDate_of_birth() );
+            alumno.setEmail( student.getEmail() );
+            alumno.setCompany( student.getCompany() );
+            alumno.setTotal_dual_hours( student.getTotal_dual_hours()) ;
+            alumno.setTotal_fct_hours( student.getTotal_fct_hours() );
+            alumno.setObservations( student.getObservations() );
+            transaction.commit();
+        }
+    }
 }
