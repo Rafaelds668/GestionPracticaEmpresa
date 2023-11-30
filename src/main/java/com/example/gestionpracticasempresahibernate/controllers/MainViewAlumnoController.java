@@ -62,6 +62,15 @@ public class MainViewAlumnoController implements Initializable {
 
     public MainViewAlumnoController(){}
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        studentDAOImp = new StudentDAOImp();
+        activityDAOImp = new ActivityDAOImp();
+        cargarTabla();
+
+
+    }
+
 
     public void logout(ActionEvent actionEvent){
         Session.setCurrentStudent(null);
@@ -73,8 +82,8 @@ public class MainViewAlumnoController implements Initializable {
         alert.setTitle("Informacion Adicional");
         alert.setHeaderText("Empresa");
         alert.setContentText("Nombre: " + Session.getCurrentStudent().getCompany().getCompany_name() +
-                " Email: " + Session.getCurrentStudent().getCompany().getEmail() +
-                " Responsable: " + Session.getCurrentStudent().getCompany().getCompany_contact());
+                "\nEmail: " + Session.getCurrentStudent().getCompany().getEmail() +
+                "\nResponsable: " + Session.getCurrentStudent().getCompany().getCompany_contact());
         alert.showAndWait();
     }
 
@@ -83,20 +92,13 @@ public class MainViewAlumnoController implements Initializable {
         alert.setTitle("Informacion Adicional");
         alert.setHeaderText("Tutor/a");
         alert.setContentText("Nombre: " + Session.getCurrentStudent().getTutor().getFirst_name() +
-                " Apellidos: " + Session.getCurrentStudent().getTutor().getLast_name() +
-                " Email: " + Session.getCurrentStudent().getTutor().getEmail());
+                "\nApellidos: " + Session.getCurrentStudent().getTutor().getLast_name() +
+                "\nEmail: " + Session.getCurrentStudent().getTutor().getEmail());
         alert.showAndWait();
     }
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        studentDAOImp = new StudentDAOImp();
-        activityDAOImp = new ActivityDAOImp();
-        cargarTabla();
 
-
-    }
 
     private void cargarTabla(){
         Student student = Session.getCurrentStudent();

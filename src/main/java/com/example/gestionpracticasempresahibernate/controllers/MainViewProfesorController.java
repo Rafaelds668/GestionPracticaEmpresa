@@ -261,8 +261,4 @@ public class MainViewProfesorController implements Initializable {
     @javafx.fxml.FXML
     public void empresas(ActionEvent actionEvent) {
     }
-
-
-
-
 }
