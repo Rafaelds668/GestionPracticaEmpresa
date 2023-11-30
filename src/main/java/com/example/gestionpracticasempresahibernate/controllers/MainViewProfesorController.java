@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -117,10 +119,14 @@ public class MainViewProfesorController implements Initializable {
             String dni = fila.getValue( ).getDni();
             return new SimpleStringProperty( dni );
         } );
-        cFecha.setCellValueFactory( ( fila ) -> {
-            String fechaNac = String.valueOf(fila.getValue( ).getDate_of_birth());
-            return new SimpleStringProperty( fechaNac );
-        } );
+        cFecha.setCellValueFactory(fila -> {
+            LocalDate fechaNac = fila.getValue().getDate_of_birth();
+            // Definir el formato deseado para la fecha (día/mes/año)
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            // Formatear la fecha al nuevo formato
+            String fechaFormateada = fechaNac.format(formatter);
+            return new SimpleStringProperty(fechaFormateada);
+        });
         cEmail.setCellValueFactory( ( fila ) -> {
             String email = fila.getValue( ).getEmail();
             return new SimpleStringProperty( email );

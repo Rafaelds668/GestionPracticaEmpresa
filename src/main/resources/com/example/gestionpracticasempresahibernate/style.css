@@ -1,3 +1,30 @@
 /*
-Poner estilos para dejarlo mejor
+Para la ventana de login
 */
+.fondoLogin1 {
+    -fx-background-radius: 30px;
+    -fx-background-color: white;
+}
+
+.fondoLogin2 {
+    -fx-background-color: #1F58A1;
+    -fx-border-color: #f6a83b;
+}
+
+.textoUsuarioContrasenya {
+    -fx-background-color: transparent;
+    -fx-border-width:  0px 0px 2px 0px;
+    -fx-border-color: #1F58A1;
+}
+.button {
+    -fx-background-color: #1F58A1;
+    -fx-border-radius: 20px;
+    -fx-text-fill: #f6a83b;
+    -fx-font-size: 16px;
+}
+/*
+Centrar el contenido de las celdas
+*/
+.table-cell:filled {
+    -fx-alignment: CENTER;
+}
