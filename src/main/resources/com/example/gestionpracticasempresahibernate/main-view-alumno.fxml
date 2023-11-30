@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpracticasempresahibernate.controllers.MainViewAlumnoController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpracticasempresahibernate.controllers.MainViewAlumnoController">
    <children>
       <BorderPane>
          <top>
@@ -37,20 +37,20 @@
             </MenuBar>
          </top>
          <center>
-            <AnchorPane prefHeight="502.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="502.0" prefWidth="600.0">
                <children>
-                  <Label layoutX="21.0" layoutY="24.0" text="Hola, Alumno">
+                  <Label fx:id="lblTitulo" layoutX="21.0" layoutY="24.0" text="Hola, Alumno">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="296.0" layoutY="77.0" text="Editar Tarea: ">
+                  <Label layoutX="279.0" layoutY="64.0" text="Editar Tarea: ">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="comboEditarTarea" layoutX="388.0" layoutY="77.0" prefHeight="25.0" prefWidth="84.0" />
-                  <GridPane layoutX="-4.0" layoutY="119.0" prefHeight="338.0" prefWidth="750.0">
+                  <ComboBox fx:id="comboEditarTarea" layoutX="398.0" layoutY="64.0" prefHeight="25.0" prefWidth="84.0" />
+                  <GridPane layoutX="-4.0" layoutY="119.0" prefHeight="338.0" prefWidth="784.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -61,7 +61,7 @@
                      <children>
                         <AnchorPane>
                            <children>
-                              <Label layoutX="28.0" layoutY="2.0" text="Añadir tarea">
+                              <Label layoutX="144.0" layoutY="1.0" text="Añadir tarea">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -71,43 +71,43 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtActividad" layoutX="28.0" layoutY="47.0" />
+                              <TextField fx:id="txtActividad" layoutX="28.0" layoutY="47.0" prefHeight="25.0" prefWidth="309.0" />
                               <Label layoutX="27.0" layoutY="82.0" text="Observaciones">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtObservacion" layoutX="28.0" layoutY="112.0" />
+                              <TextField fx:id="txtObservacion" layoutX="28.0" layoutY="102.0" prefHeight="25.0" prefWidth="310.0" />
                               <Label layoutX="28.0" layoutY="152.0" text="Fecha">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
                               <DatePicker fx:id="dateFecha" layoutX="72.0" layoutY="150.0" prefHeight="25.0" prefWidth="78.0" />
-                              <Label layoutX="27.0" layoutY="194.0" text="Total de Practicas">
+                              <Label layoutX="162.0" layoutY="152.0" text="Horas de practica">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Spinner fx:id="spTotal" layoutX="150.0" layoutY="190.0" prefHeight="25.0" prefWidth="58.0" />
-                              <Label layoutX="30.0" layoutY="227.0" text="T`ipo de Practica">
+                              <Spinner fx:id="spTotal" layoutX="280.0" layoutY="150.0" prefHeight="25.0" prefWidth="58.0" />
+                              <Label layoutX="123.0" layoutY="192.0" text="Tipo de Practica">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <RadioButton fx:id="rbFCT" layoutX="29.0" layoutY="255.0" mnemonicParsing="false" text="FCT" />
-                              <RadioButton fx:id="rbDual" layoutX="94.0" layoutY="255.0" mnemonicParsing="false" text="Dual" />
-                              <Button fx:id="btnAñadir" layoutX="121.0" layoutY="299.0" mnemonicParsing="false" text="Añadir" />
+                              <RadioButton fx:id="rbFCT" layoutX="126.0" layoutY="224.0" mnemonicParsing="false" text="FCT" />
+                              <RadioButton fx:id="rbDual" layoutX="193.0" layoutY="224.0" mnemonicParsing="false" text="Dual" />
+                              <Button fx:id="btnAñadir" layoutX="157.0" layoutY="255.0" mnemonicParsing="false" text="Añadir" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane GridPane.columnIndex="1">
+                        <AnchorPane prefHeight="338.0" prefWidth="428.0" GridPane.columnIndex="1">
                            <children>
-                              <Label layoutX="14.0" layoutY="2.0" text="Lista de Tareas">
+                              <Label layoutX="156.0" layoutY="1.0" text="Lista de Tareas">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <TableView fx:id="tvActividad" layoutX="-3.0" layoutY="43.0" prefHeight="200.0" prefWidth="402.0">
+                              <TableView fx:id="tvActividad" layoutY="26.0" prefHeight="200.0" prefWidth="385.0">
                                 <columns>
                                   <TableColumn fx:id="cActividad" prefWidth="75.0" text="Actividad" />
                                   <TableColumn fx:id="cObservacion" prefWidth="93.0" text="Observaciones" />

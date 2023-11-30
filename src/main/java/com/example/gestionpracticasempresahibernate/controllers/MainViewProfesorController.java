@@ -75,12 +75,6 @@ public class MainViewProfesorController implements Initializable {
     @javafx.fxml.FXML
     private Button btnVerEmpresas;
 
-
-    public void logout(ActionEvent actionEvent){
-        Session.setCurrentTeacher(null);
-        Main.loadLogin("login-view.fxml");
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         teacherDAOImp = new TeacherDAOImp();
@@ -255,10 +249,24 @@ public class MainViewProfesorController implements Initializable {
 
     @javafx.fxml.FXML
     public void detallesAlumno(ActionEvent actionEvent) {
-        if(Session.getCurrentStudent() != null) Main.loadFXML("editar-alumno-view.fxml", "Detalles del alumno " + Session.getCurrentStudent().getFirst_name());
+        Student selectedStudent = tvAlumnos.getSelectionModel().getSelectedItem();
+        if (selectedStudent != null){
+            if(Session.getCurrentStudent() != null) Main.loadFXML("editar-alumno-view.fxml", "Detalles del alumno " + Session.getCurrentStudent().getFirst_name());
+        }else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Por favor, selecciona un alumno para modificarlo");
+            alert.showAndWait();
+        }
+
+
     }
 
     @javafx.fxml.FXML
     public void empresas(ActionEvent actionEvent) {
+    }
+
+    public void logout(ActionEvent actionEvent){
+        Session.setCurrentTeacher(null);
+        Main.loadLogin("login-view.fxml");
     }
 }

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/CosasAHacer.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewAlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewAlumnoController.java" afterDir="false" />
+    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Borrado fxml que no vamos a necesitar, hecho archivo temporal de cosas a hacer, pequeños cambios en los alert">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewProfesorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewProfesorController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +100,7 @@
       <workItem from="1701113833247" duration="3628000" />
       <workItem from="1701156243038" duration="1885000" />
       <workItem from="1701170666625" duration="4780000" />
-      <workItem from="1701334838961" duration="1949000" />
+      <workItem from="1701334838961" duration="2454000" />
     </task>
     <task id="LOCAL-00001" summary="Incluido en la tabla a los alumnos de los profesores">
       <option name="closed" value="true" />
@@ -129,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701335459071</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Borrado fxml que no vamos a necesitar, hecho archivo temporal de cosas a hacer, pequeños cambios en los alert">
+      <option name="closed" value="true" />
+      <created>1701336980020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701336980020</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +145,7 @@
     <MESSAGE value="Incluido en la tabla a los alumnos de los profesores" />
     <MESSAGE value="Crear Usuario funcional y un poco del editarUsuario.fxml" />
     <MESSAGE value="Añadidos estilos a styles.css, cambiado el fxml del login y cambiado formato de la fecha en el main view del profesor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadidos estilos a styles.css, cambiado el fxml del login y cambiado formato de la fecha en el main view del profesor" />
+    <MESSAGE value="Borrado fxml que no vamos a necesitar, hecho archivo temporal de cosas a hacer, pequeños cambios en los alert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Borrado fxml que no vamos a necesitar, hecho archivo temporal de cosas a hacer, pequeños cambios en los alert" />
   </component>
 </project>

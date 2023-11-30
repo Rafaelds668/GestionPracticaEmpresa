@@ -1,3 +1,2 @@
-//TODO: Arreglar en la mainView del profesor que no se selecciona ningun alumno para editar y selecciona al primero directamente
 //TODO: Hacer en el mainView del profesor que un alumno pueda no tener empresa
 //TODO: Hacer que se llene la tabla de tareas en la mainView del alumno
