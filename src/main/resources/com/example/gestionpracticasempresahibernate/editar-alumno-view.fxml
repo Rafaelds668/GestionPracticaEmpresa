@@ -11,211 +11,139 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpracticasempresahibernate.controllers.EditarAlumnoViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpracticasempresahibernate.controllers.EditarAlumnoViewController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Cuenta">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+              <MenuItem mnemonicParsing="false" onAction="#logout" text="Cerrar sesión" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
    </top>
    <center>
-      <AnchorPane prefHeight="458.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane alignment="CENTER" layoutY="90.0" prefHeight="364.0" prefWidth="600.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label text="Nombre">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField fx:id="txtNombre" prefHeight="33.0" prefWidth="218.0">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
-                     <children>
-                        <Label text="Apellido">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField fx:id="txtApellido" prefHeight="37.0" prefWidth="187.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="59.0" text="DNI">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField fx:id="txtDNI" prefHeight="33.0" prefWidth="218.0">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <children>
-                        <Label text="Fecha de Nacimiento">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <DatePicker fx:id="dateFecha" prefHeight="36.0" prefWidth="115.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
-                     <children>
-                        <Label text="Empresa">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <ComboBox fx:id="comboEmpresa" prefHeight="40.0" prefWidth="154.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <children>
-                        <Label text="Observaciones">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextArea fx:id="txtObservacion" prefHeight="72.0" prefWidth="169.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-                     <children>
-                        <Label prefHeight="50.0" prefWidth="59.0" text="Email">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField fx:id="txtEmail" prefHeight="33.0" prefWidth="218.0">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <children>
-                        <Label prefHeight="50.0" prefWidth="68.0" text="Telefono">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField fx:id="txtTelef" prefHeight="33.0" prefWidth="204.0">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </TextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-                     <children>
-                        <Label prefHeight="50.0" prefWidth="78.0" text="Horas FCT">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Spinner fx:id="spFCT" prefHeight="25.0" prefWidth="106.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <children>
-                        <Label prefHeight="50.0" prefWidth="89.0" text="Horas Dual">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <Spinner fx:id="spDual" prefHeight="25.0" prefWidth="100.0" />
-                     </children>
-                  </HBox>
-               </children>
-            </GridPane>
-            <Label fx:id="labelInfo" layoutX="14.0" layoutY="14.0" text="Tutor: Francisco Romero">
+            <Label fx:id="lblTitulo" text="Editar alumno">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
                <font>
-                  <Font size="21.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnElimiinar" layoutX="77.0" layoutY="465.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="50.0" prefWidth="100.0" text="Eliminar" />
-            <Button fx:id="btnEditar" layoutX="240.0" layoutY="465.0" mnemonicParsing="false" onAction="#editar" prefHeight="50.0" prefWidth="100.0" text="Editar" />
-            <Button fx:id="btnAtras" layoutX="424.0" layoutY="465.0" mnemonicParsing="false" onAction="#atras" prefHeight="50.0" prefWidth="100.0" text="Atras" />
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label text="Nombre:" />
+                  <TextField fx:id="txtNombre" prefHeight="25.0" prefWidth="146.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <Label text="Apellidos:" />
+                  <TextField fx:id="txtApellido" prefHeight="25.0" prefWidth="220.0" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label text="DNI:" />
+                  <TextField fx:id="txtDNI" prefHeight="25.0" prefWidth="157.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <Label text="Fecha de nacimiento:" />
+                  <DatePicker fx:id="dateFecha" prefHeight="25.0" prefWidth="175.0" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label text="Teléfono:" />
+                  <TextField fx:id="txtTelef">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <Label text="Email:" />
+                  <TextField fx:id="txtEmail" prefHeight="25.0" prefWidth="241.0" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <VBox prefHeight="227.0" prefWidth="227.0">
+                     <children>
+                        <Label text="Observaciones:" />
+                        <TextArea fx:id="txtObservacion" prefHeight="200.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="201.0" prefWidth="286.0" spacing="20.0">
+                     <children>
+                        <Label text="Total de horas:" />
+                        <HBox spacing="10.0">
+                           <children>
+                              <Label text="Horas FCT:" />
+                              <Spinner fx:id="spFCT" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Label text="Horas dual:" />
+                              <Spinner fx:id="spDual" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Label text="Empresa:" />
+                              <ComboBox fx:id="comboEmpresa" prefHeight="25.0" prefWidth="163.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+                  <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" text="Editar" />
+                  <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#atras" text="Volver" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
          </children>
-      </AnchorPane>
+      </VBox>
    </center>
 </BorderPane>

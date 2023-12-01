@@ -55,10 +55,12 @@ public class MainViewAlumnoController implements Initializable {
     private Label infoHorasDual;
     @javafx.fxml.FXML
     private Label infoHorasFCT;
-
+    @javafx.fxml.FXML
+    private Label lblTitulo;
 
     StudentDAOImp studentDAOImp;
     ActivityDAOImp activityDAOImp;
+
 
     public MainViewAlumnoController(){}
 
@@ -66,6 +68,7 @@ public class MainViewAlumnoController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         studentDAOImp = new StudentDAOImp();
         activityDAOImp = new ActivityDAOImp();
+        lblTitulo.setText("Hola, " + Session.getCurrentStudent().getFirst_name());
         cargarTabla();
 
 

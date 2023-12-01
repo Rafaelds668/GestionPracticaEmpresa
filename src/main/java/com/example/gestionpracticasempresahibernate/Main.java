@@ -30,17 +30,6 @@ public class Main extends Application {
         }
     }
 
-    public static void loadWindow(String ruta) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(ruta));
-            Scene scene = new Scene(fxmlLoader.load(), 900, 600);
-            myStage.setResizable(false);
-            myStage.setScene(scene);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static void loadFXML (String fxml, String titulo){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml));

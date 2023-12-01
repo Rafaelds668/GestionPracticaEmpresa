@@ -26,13 +26,21 @@
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                  <Menu mnemonicParsing="false" text="Cuenta">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#logout" text="Cerrar sesión" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Tutor/a">
                   <items>
-                        <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
-                        <MenuItem mnemonicParsing="false" onAction="#informacionEmpresa" text="Informacion Empresa " />
                         <MenuItem mnemonicParsing="false" onAction="#informacionTutor" text="Informacion  Tutor/a" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Empresa">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#informacionEmpresa" text="Informacion Empresa " />
+                    </items>
+                  </Menu>
               </menus>
             </MenuBar>
          </top>
@@ -112,7 +120,7 @@
                                   <TableColumn fx:id="cActividad" prefWidth="75.0" text="Actividad" />
                                   <TableColumn fx:id="cObservacion" prefWidth="93.0" text="Observaciones" />
                                     <TableColumn fx:id="cFecha" prefWidth="75.0" text="Fecha" />
-                                    <TableColumn fx:id="cHora" text="Hora" />
+                                    <TableColumn fx:id="cHora" text="Horas" />
                                     <TableColumn fx:id="cPractica" prefWidth="78.0" text="Practica" />
                                 </columns>
                                  <columnResizePolicy>

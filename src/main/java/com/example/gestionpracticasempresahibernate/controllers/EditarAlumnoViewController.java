@@ -36,20 +36,18 @@ public class EditarAlumnoViewController implements Initializable {
     @javafx.fxml.FXML
     private Spinner <Integer> spDual;
     @javafx.fxml.FXML
-    private Label labelInfo;
-    @javafx.fxml.FXML
-    private Button btnElimiinar;
-    @javafx.fxml.FXML
     private Button btnEditar;
     @javafx.fxml.FXML
-    private Button btnAtras;
+    private Label lblTitulo;
     @javafx.fxml.FXML
-    private ComboBox <String> comboEmpresa;
+    private Button btnEliminar;
+    @javafx.fxml.FXML
+    private Button btnVolver;
+    @javafx.fxml.FXML
+    private ComboBox comboEmpresa;
 
     CompanyDAOImp companyDAOImp;
     TeacherDAOImp teacherDAOImp;
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -92,6 +90,7 @@ public class EditarAlumnoViewController implements Initializable {
     @javafx.fxml.FXML
     public void editar() {
         Student student = Session.getCurrentStudent();
+
         student.setFirst_name(txtNombre.getText());
         student.setLast_name(txtApellido.getText());
         student.setDni(txtDNI.getText());
@@ -100,7 +99,7 @@ public class EditarAlumnoViewController implements Initializable {
         student.setContact_phone(txtTelef.getText());
         student.setTotal_fct_hours(spFCT.getValue());
         student.setTotal_dual_hours(spDual.getValue());
-        student.setCompany( teacherDAOImp.nombreCompañia( comboEmpresa.getValue() ) );
+        student.setCompany( teacherDAOImp.nombreCompañia((String) comboEmpresa.getValue()) );
         student.setObservations(txtObservacion.getText());
 
         teacherDAOImp.updateAlumno(student);
