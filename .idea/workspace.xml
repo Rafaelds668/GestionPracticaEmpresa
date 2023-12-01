@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Cambios visuales">
+    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Cambiado el fxml de EditarAlumno (hecho con hbox y vbox) y cambio para que cambie el titulo en el mainView del alumno">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarAlumnoViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarAlumnoViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewAlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewAlumnoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CosasAHacer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CosasAHacer.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/editar-alumno-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/editar-alumno-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/main-view-alumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/main-view-alumno.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/CrearEmpresaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainEmpresaViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewProfesorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainViewProfesorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/crear-empresa-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/main-empresa-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/main-view-profesor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/main-view-profesor.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +105,7 @@
       <workItem from="1701156243038" duration="1885000" />
       <workItem from="1701170666625" duration="4780000" />
       <workItem from="1701334838961" duration="4107000" />
-      <workItem from="1701415038575" duration="3384000" />
+      <workItem from="1701415038575" duration="6467000" />
     </task>
     <task id="LOCAL-00001" summary="Incluido en la tabla a los alumnos de los profesores">
       <option name="closed" value="true" />
@@ -149,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701341244031</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Cambiado el fxml de EditarAlumno (hecho con hbox y vbox) y cambio para que cambie el titulo en el mainView del alumno">
+      <option name="closed" value="true" />
+      <created>1701421748454</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701421748454</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +168,7 @@
     <MESSAGE value="Añadidos estilos a styles.css, cambiado el fxml del login y cambiado formato de la fecha en el main view del profesor" />
     <MESSAGE value="Borrado fxml que no vamos a necesitar, hecho archivo temporal de cosas a hacer, pequeños cambios en los alert" />
     <MESSAGE value="Cambios visuales" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios visuales" />
+    <MESSAGE value="Cambiado el fxml de EditarAlumno (hecho con hbox y vbox) y cambio para que cambie el titulo en el mainView del alumno" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiado el fxml de EditarAlumno (hecho con hbox y vbox) y cambio para que cambie el titulo en el mainView del alumno" />
   </component>
 </project>

@@ -73,7 +73,7 @@ public class MainViewProfesorController implements Initializable {
     @javafx.fxml.FXML
     private Button btnVerAlumno;
     @javafx.fxml.FXML
-    private Button btnVerEmpresas;
+    private MenuItem menuEmpresas;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -263,6 +263,7 @@ public class MainViewProfesorController implements Initializable {
 
     @javafx.fxml.FXML
     public void empresas(ActionEvent actionEvent) {
+        Main.loadFXML("main-empresa-view.fxml", "Listado de empresas" );
     }
 
     public void logout(ActionEvent actionEvent){

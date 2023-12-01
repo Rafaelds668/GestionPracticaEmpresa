@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="743.0" prefWidth="1323.0" styleClass="ventana" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpracticasempresahibernate.controllers.MainEmpresaViewController">
+    <center>
+        <SplitPane dividerPositions="0.5" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="880.0" styleClass="transparente" BorderPane.alignment="CENTER">
+            <items>
+                <VBox alignment="TOP_CENTER" blendMode="MULTIPLY" maxWidth="300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" spacing="20.0" styleClass="transparente">
+                    <children>
+                        <Label text="Añadir empresa">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="280.0" spacing="20.0">
+                            <children>
+                                <Label text="Nombre" />
+                                <TextField fx:id="txtNombreEmpresa" prefHeight="25.0" prefWidth="166.0">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <Label text="Encargado" />
+                        <TextField fx:id="txtEncargado" />
+                     </children>
+                  </HBox>
+                        <HBox alignment="CENTER" prefHeight="36.0" prefWidth="280.0" spacing="20.0">
+                            <children>
+                                <Label text="Email" />
+                                <TextField fx:id="txtEmail" prefHeight="25.0" prefWidth="178.0">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="280.0" spacing="20.0">
+                            <children>
+                                <Label text="Teléfono" />
+                                <TextField fx:id="txtTelef" prefHeight="25.0" prefWidth="155.0">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <FlowPane hgap="20.0" />
+                        <Label text="Incidentes" />
+                        <ScrollPane prefHeight="133.0" prefWidth="213.0">
+                            <content>
+                                <TextArea fx:id="txtIncidentes" prefHeight="144.0" prefWidth="273.0" />
+                            </content>
+                        </ScrollPane>
+                      <Button fx:id="btnAñadir" mnemonicParsing="false" onAction="#insertCompany" text="Añadir a la tabla" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+                <TableView id="tabla" fx:id="tvAlumnos" prefHeight="400.0" prefWidth="400.0">
+                    <columns>
+                        <TableColumn fx:id="cNombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="cEncargado" prefWidth="75.0" text="Encargado" />
+                        <TableColumn fx:id="cEmail" prefWidth="75.0" text="Email" />
+                        <TableColumn fx:id="cTelefono" prefWidth="75.0" text="Teléfono" />
+                        <TableColumn fx:id="cIncidentes" prefWidth="75.0" text="Incidentes" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+                </TableView>
+            </items>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </SplitPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="43.0" prefWidth="880.0" BorderPane.alignment="CENTER">
+            <children>
+                  <Button fx:id="btnVerEmpresa" mnemonicParsing="false" onAction="#detalleEmpresa" text="Modificar empresa">
+               <HBox.margin>
+                  <Insets left="250.0" />
+               </HBox.margin>
+            </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </bottom>
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar prefHeight="32.0" prefWidth="1332.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Cuenta">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#logout" text="Cerrar sesión" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Alumnos">
+                            <items>
+                                <MenuItem fx:id="menuAlumnos" mnemonicParsing="false" onAction="#alumnos" text="Ver alumnos" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <Label fx:id="lblTitulo" text="Profesor">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="15.0" />
+                    </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+</BorderPane>

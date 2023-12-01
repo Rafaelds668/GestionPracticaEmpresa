@@ -15,7 +15,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -148,11 +147,11 @@
                </columnResizePolicy>
             </TableView>
          </items>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </SplitPane>
    </center>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
    <bottom>
       <HBox prefHeight="43.0" prefWidth="880.0" BorderPane.alignment="CENTER">
          <children>
@@ -164,11 +163,6 @@
             <HBox alignment="CENTER" prefHeight="25.0" prefWidth="670.0">
                <children>
                   <Button fx:id="btnVerAlumno" mnemonicParsing="false" onAction="#detallesAlumno" text="Modificar alumno" />
-                  <Button fx:id="btnVerEmpresas" mnemonicParsing="false" onAction="#empresas" text="Modificar empresa">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Button>
                </children>
                <HBox.margin>
                   <Insets left="300.0" />
@@ -184,23 +178,31 @@
       </HBox>
    </bottom>
    <top>
-      <AnchorPane prefHeight="69.0" prefWidth="1303.0" BorderPane.alignment="CENTER">
+      <VBox BorderPane.alignment="CENTER">
          <children>
-            <MenuBar layoutX="-9.0" layoutY="-10.0" prefHeight="32.0" prefWidth="1332.0">
+            <MenuBar prefHeight="32.0" prefWidth="1332.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Cuenta">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#logout" text="Cerrar sesión" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Empresas">
+                    <items>
+                        <MenuItem fx:id="menuEmpresas" mnemonicParsing="false" onAction="#empresas" text="Ver empresas" />
+                    </items>
+                  </Menu>
               </menus>
             </MenuBar>
-            <Label fx:id="lblTitulo" layoutX="14.0" layoutY="29.0" text="Profesor">
+            <Label fx:id="lblTitulo" text="Profesor">
                <font>
                   <Font size="26.0" />
                </font>
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
             </Label>
          </children>
-      </AnchorPane>
+      </VBox>
    </top>
 </BorderPane>
