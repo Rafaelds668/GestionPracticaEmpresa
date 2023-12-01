@@ -92,13 +92,13 @@ public class MainViewProfesorController implements Initializable {
             Session.setCurrentStudent(student);
         });
 
-        lblTitulo.setText("Hola " + Session.getCurrentTeacher().getFirst_name());
+        lblTitulo.setText("Hola, " + Session.getCurrentTeacher().getFirst_name());
 
     }
 
     private void cargarTabla() {
         Teacher teacher = Session.getCurrentTeacher();
-        TeacherDAOImp teacherDAOImp1 = new TeacherDAOImp();
+        //TeacherDAOImp teacherDAOImp1 = new TeacherDAOImp();
         List<Student> alumnosDeProfesor = teacherDAOImp.alumnoDeProfesor(teacher);
 
         cNombre.setCellValueFactory( (fila) -> {
@@ -257,8 +257,6 @@ public class MainViewProfesorController implements Initializable {
             alert.setContentText("Por favor, selecciona un alumno para modificarlo");
             alert.showAndWait();
         }
-
-
     }
 
     @javafx.fxml.FXML

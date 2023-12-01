@@ -1,5 +1,6 @@
 package com.example.gestionpracticasempresahibernate.domain;
 
+import com.example.gestionpracticasempresahibernate.domain.company.Company;
 import com.example.gestionpracticasempresahibernate.domain.student.Student;
 import com.example.gestionpracticasempresahibernate.domain.teacher.Teacher;
 import lombok.Getter;
@@ -14,5 +15,9 @@ public class Session {
     @Setter
     @Getter
     private static Student currentStudent;
+
+    @Getter
+    @Setter
+    private static Company currentCompany;
 
 }
