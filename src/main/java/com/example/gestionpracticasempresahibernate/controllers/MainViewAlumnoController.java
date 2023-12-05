@@ -24,8 +24,6 @@ import java.util.ResourceBundle;
 public class MainViewAlumnoController implements Initializable {
 
     @javafx.fxml.FXML
-    private ComboBox comboEditarTarea;
-    @javafx.fxml.FXML
     private TextField txtActividad;
     @javafx.fxml.FXML
     private TextField txtObservacion;
@@ -60,6 +58,8 @@ public class MainViewAlumnoController implements Initializable {
 
     StudentDAOImp studentDAOImp;
     ActivityDAOImp activityDAOImp;
+    @javafx.fxml.FXML
+    private Button btnEditarTarea;
 
 
     public MainViewAlumnoController(){}
@@ -69,6 +69,9 @@ public class MainViewAlumnoController implements Initializable {
         studentDAOImp = new StudentDAOImp();
         activityDAOImp = new ActivityDAOImp();
         lblTitulo.setText("Hola, " + Session.getCurrentStudent().getFirst_name());
+        //TODO: Cambiar para que ponga las horas realizadas bien
+        infoHorasDual.setText("Horas realizadas dual: 0 Horas restantes dual: " + Session.getCurrentStudent().getTotal_dual_hours());
+        infoHorasFCT.setText("Horas realizadas FCT: 0 Horas restantes FCT: " + Session.getCurrentStudent().getTotal_fct_hours());
         cargarTabla();
 
 
@@ -108,4 +111,15 @@ public class MainViewAlumnoController implements Initializable {
         StudentDAOImp studentDAOImp = new StudentDAOImp();
     }
 
+    @javafx.fxml.FXML
+    public void editarTarea(ActionEvent actionEvent) {
+        Activity selectedActivity = tvActividad.getSelectionModel().getSelectedItem();
+        if (selectedActivity != null){
+            if(Session.getCurrentStudent() != null) Main.loadFXML("editar-tarea-view.fxml", "Detalles de la tarea de " + Session.getCurrentStudent().getFirst_name());
+        }else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Por favor, selecciona una tarea para modificarla");
+            alert.showAndWait();
+        }
+    }
 }

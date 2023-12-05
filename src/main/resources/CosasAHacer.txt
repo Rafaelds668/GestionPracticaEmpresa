@@ -2,3 +2,7 @@
 //TODO: Hacer que se llene la tabla de tareas en la mainView del alumno
 //TODO: Hacer que al editar un alumno haya campos que haya que poner si o si
 //TODO: Refactorizar en el mainView del profesor y de empresa el comprobar para añadir alumnos y empresas
+
+//TODO: MainView alumno cambiar los label para que ponga las horas totales del alumno y las restantes
+
+//TODO: Editar alumno y empresa hacer que no se puedan editar los valores a null

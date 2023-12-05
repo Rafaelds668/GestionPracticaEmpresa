@@ -39,8 +39,6 @@ public class LoginController implements Initializable {
             info.setStyle("-fx-text-fill: red;");
 
         } else {
-            //TODO : Mirar como controlar el tipo de usuario y cambiar lo de abajo para inciar sesion
-
             // ACCESO A BASE DE DATOS PARA LA VALIDACION
 
             Teacher teacher = (new TeacherDAOImp()).validateUser(user, pass);
@@ -56,9 +54,7 @@ public class LoginController implements Initializable {
                     Session.setCurrentStudent(student);
                     Main.loadFXML("main-view-alumno.fxml", "Tareas del alumno " + Session.getCurrentStudent().getFirst_name());
                 }
-
             }
-
         }
     }
 }

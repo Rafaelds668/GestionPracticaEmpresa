@@ -83,8 +83,8 @@ public class EditarAlumnoViewController implements Initializable {
         var salida = alert.showAndWait().get();
         if (salida.getButtonData() == ButtonBar.ButtonData.OK_DONE){
             teacherDAOImp.deleteAlumno(Session.getCurrentStudent());
+            atras();
         }
-        atras();
     }
 
     @javafx.fxml.FXML
