@@ -1,5 +1,6 @@
 package com.example.gestionpracticasempresahibernate.domain;
 
+import com.example.gestionpracticasempresahibernate.domain.activity.Activity;
 import com.example.gestionpracticasempresahibernate.domain.company.Company;
 import com.example.gestionpracticasempresahibernate.domain.student.Student;
 import com.example.gestionpracticasempresahibernate.domain.teacher.Teacher;
@@ -19,5 +20,9 @@ public class Session {
     @Getter
     @Setter
     private static Company currentCompany;
+
+    @Getter
+    @Setter
+    private static Activity currentActivity;
 
 }

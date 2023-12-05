@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Cambios en fxml de editar empresa (hecho) y el codigo del controller también, fxml de main empresa view, main view del alumno">
+    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Hecho el fxml de editar tarea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarTareaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarTareaViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/editar-tarea-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestionpracticasempresahibernate/editar-tarea-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/Session.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +105,7 @@
       <workItem from="1701334838961" duration="4107000" />
       <workItem from="1701415038575" duration="9774000" />
       <workItem from="1701761533513" duration="8316000" />
-      <workItem from="1701774930733" duration="1252000" />
+      <workItem from="1701774930733" duration="4338000" />
     </task>
     <task id="LOCAL-00001" summary="Incluido en la tabla a los alumnos de los profesores">
       <option name="closed" value="true" />
@@ -179,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701768184770</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Hecho el fxml de editar tarea">
+      <option name="closed" value="true" />
+      <created>1701776454241</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701776454241</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +204,7 @@
     <MESSAGE value="Hecho fxml de la tabla de las empresas y empezar un poco con el controller" />
     <MESSAGE value="Hecho algo de codigo de MainEmpresaViewController (aun hay que tocar cosas)" />
     <MESSAGE value="Cambios en fxml de editar empresa (hecho) y el codigo del controller también, fxml de main empresa view, main view del alumno" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios en fxml de editar empresa (hecho) y el codigo del controller también, fxml de main empresa view, main view del alumno" />
+    <MESSAGE value="Hecho el fxml de editar tarea" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hecho el fxml de editar tarea" />
   </component>
 </project>
