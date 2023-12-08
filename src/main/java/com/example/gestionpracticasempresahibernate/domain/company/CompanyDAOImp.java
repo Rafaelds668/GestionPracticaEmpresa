@@ -2,6 +2,7 @@ package com.example.gestionpracticasempresahibernate.domain.company;
 
 import com.example.gestionpracticasempresahibernate.domain.DAO;
 import com.example.gestionpracticasempresahibernate.domain.HibernateUtil;
+import com.example.gestionpracticasempresahibernate.domain.student.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -80,5 +81,19 @@ public class CompanyDAOImp implements DAO<Company> {
             Company company = session.get(Company.class, data.getCompany_id());
             session.remove(company);
         }));
+    }
+    public void insertCompany(Company company){
+        try ( org.hibernate.Session s = HibernateUtil.getSessionFactory( ).openSession( ) ) {
+            Transaction t = s.beginTransaction( );
+            //Crear un nuevo item
+            Company newcompany = new Company( );
+            newcompany.setCompany_name( company.getCompany_name() );
+            newcompany.setPhone_number( company.getPhone_number() );
+            newcompany.setEmail( company.getEmail() );
+            newcompany.setCompany_contact( company.getCompany_contact() );
+            newcompany.setIncidents( company.getIncidents() );
+            s.persist( newcompany );
+            t.commit( );
+        }
     }
 }

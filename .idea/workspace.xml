@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Hecho el fxml de editar tarea">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarTareaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarTareaViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainEmpresaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainEmpresaViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/company/CompanyDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/company/CompanyDAOImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,17 +78,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -106,6 +96,9 @@
       <workItem from="1701415038575" duration="9774000" />
       <workItem from="1701761533513" duration="8316000" />
       <workItem from="1701774930733" duration="4338000" />
+      <workItem from="1701939994286" duration="3687000" />
+      <workItem from="1701973862202" duration="749000" />
+      <workItem from="1702025703484" duration="2718000" />
     </task>
     <task id="LOCAL-00001" summary="Incluido en la tabla a los alumnos de los profesores">
       <option name="closed" value="true" />
@@ -192,6 +185,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

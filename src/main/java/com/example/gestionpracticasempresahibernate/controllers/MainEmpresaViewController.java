@@ -2,17 +2,22 @@ package com.example.gestionpracticasempresahibernate.controllers;
 
 import com.example.gestionpracticasempresahibernate.Main;
 import com.example.gestionpracticasempresahibernate.domain.Session;
+import com.example.gestionpracticasempresahibernate.domain.activity.Activity;
 import com.example.gestionpracticasempresahibernate.domain.company.Company;
 import com.example.gestionpracticasempresahibernate.domain.company.CompanyDAOImp;
 import com.example.gestionpracticasempresahibernate.domain.student.Student;
+import com.example.gestionpracticasempresahibernate.domain.teacher.Teacher;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseButton;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -57,12 +62,31 @@ public class MainEmpresaViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lblTitulo.setText("Hola, " + Session.getCurrentTeacher().getFirst_name());
-        observableList = FXCollections.observableArrayList();
+        companyDAOImp = new CompanyDAOImp();
         cargarTabla();
+        List<String> nombreCompania = new ArrayList<>();
+        companyDAOImp.getAll().forEach(s -> nombreCompania.add(s.getCompany_name()));
+
+        tvEmpresas.getSelectionModel().selectedItemProperty().addListener((observableValue, company, t1) -> {
+            Session.setCurrentCompany(t1);
+        });
+        tvEmpresas.setOnMouseClicked(event ->{
+            if(event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
+                Company selectCompany = tvEmpresas.getSelectionModel().getSelectedItem();
+                if(selectCompany != null){
+                    Session.setCurrentCompany(selectCompany);
+                    Main.loadFXML("editar-empresa-view.fxml", "Editar Empresa");
+                }
+            }
+        });
+
     }
 
     private void cargarTabla() {
+        CompanyDAOImp companyDAOImp = new CompanyDAOImp();
+        List<Company> companyList = companyDAOImp.getAll();
+        Teacher teacher = Session.getCurrentTeacher();
+        lblTitulo.setText("Hola, " + Session.getCurrentTeacher().getFirst_name());
 
         cNombre.setCellValueFactory( (fila) -> {
             String nombre = fila.getValue().getCompany_name();
@@ -84,6 +108,10 @@ public class MainEmpresaViewController implements Initializable {
             String incidente = fila.getValue().getIncidents();
             return  new SimpleStringProperty(incidente);
         });
+        ObservableList<Company> observableList = FXCollections.observableArrayList();
+        observableList.addAll(companyList);
+        tvEmpresas.setItems(observableList);
+
     }
 
     @javafx.fxml.FXML
@@ -111,6 +139,8 @@ public class MainEmpresaViewController implements Initializable {
             company.setEmail(txtEmail.getText());
             company.setPhone_number(txtTelef.getText());
             company.setIncidents(txtIncidentes.getText());
+            companyDAOImp.insertCompany(company);
+            cargarTabla();
         }
     }
 
