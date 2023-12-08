@@ -15,7 +15,7 @@ import java.util.List;
 @Log
 public class TeacherDAOImp implements DAO<Teacher> {
     @Override
-    public ArrayList<Teacher> getAll() {
+    public List<Teacher> getAll() {
         var salida = new ArrayList<Teacher>(0);
         try(Session sesion = HibernateUtil.getSessionFactory().openSession()){
             Query<Teacher> query = sesion.createQuery("from Teacher", Teacher.class);

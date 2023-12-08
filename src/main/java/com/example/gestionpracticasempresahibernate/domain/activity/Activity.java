@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.example.gestionpracticasempresahibernate.domain.activity.PracticeType;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -17,7 +20,7 @@ public class Activity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long activity_id;
 
-    private String activity_date;
+    private LocalDate activity_date;
     @Enumerated(EnumType.STRING)
     private PracticeType practice_type;
     private Integer total_hours;

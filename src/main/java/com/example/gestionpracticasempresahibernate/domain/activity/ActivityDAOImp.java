@@ -7,16 +7,21 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityDAOImp implements DAO<Activity> {
     @Override
-    public ArrayList<Activity> getAll() {
-        var salida = new ArrayList<Activity>(0);
-        try (Session session = HibernateUtil.getSessionFactory().openSession()){
-            Query<Activity> query = session.createQuery("from Activity ", Activity.class);
-            salida = (ArrayList<Activity>) query.getResultList();
+    public List<Activity> getAll() {
+        //Creo una lista de Activity para almacenar los estudiantes
+        List<Activity> result = null;
+        //Inicio sesion en hibernate
+        try( Session session = HibernateUtil.getSessionFactory().openSession()) {
+            // Creo una consulta Query para obtener todos los objetos Activity
+            Query<Activity> query = session.createQuery( "from Activity ", Activity.class);
+            // Llevo a cabo la consulta y asigno los resultados a la lista de salida
+            result = query.getResultList();
         }
-        return salida;
+        return result;
     }
 
     @Override

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class StudentDAOImp implements DAO<Student> {
     @Override
-    public ArrayList<Student> getAll() {
+    public List<Student> getAll() {
         var salida = new ArrayList<Student>(0);
         try(Session sesion = HibernateUtil.getSessionFactory().openSession()){
             Query<Student> query = sesion.createQuery("from Student", Student.class);
@@ -107,4 +107,13 @@ public class StudentDAOImp implements DAO<Student> {
         return result;
     }
 
+    public List<Activity> actividadDeAlumno(Student student) {
+        List<Activity> salida = new ArrayList<>( );
+        try ( Session s = HibernateUtil.getSessionFactory( ).openSession( ) ) {
+            Query<Activity> q = s.createQuery( "from Student where student_id =: student" , Activity.class );
+            q.setParameter( "student" , student.getStudent_id() );
+            salida = q.getResultList();
+        }
+        return salida;
+    }
 }

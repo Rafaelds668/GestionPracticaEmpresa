@@ -48,7 +48,7 @@ public class EditarTareaViewController implements Initializable {
 
         txtActividad.setText(activity.getActivity_description());
         txtObservacion.setText(activity.getObservations());
-        dateFecha.setValue(LocalDate.parse(activity.getActivity_date()));
+        dateFecha.setValue(activity.getActivity_date());
         if (activity.getPractice_type() == PracticeType.DUAL){
             spHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, student.getTotal_dual_hours(), activity.getTotal_hours(), 1));
         }else {
@@ -75,7 +75,7 @@ public class EditarTareaViewController implements Initializable {
 
         activity.setActivity_description(txtActividad.getText());
         activity.setObservations(txtObservacion.getText());
-        activity.setActivity_date(String.valueOf(dateFecha.getValue()));
+        activity.setActivity_date(dateFecha.getValue());
     }
 
     @javafx.fxml.FXML

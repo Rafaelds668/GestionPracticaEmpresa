@@ -8,10 +8,11 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CompanyDAOImp implements DAO<Company> {
     @Override
-    public ArrayList<Company> getAll() {
+    public List<Company> getAll() {
         var salida = new ArrayList<Company>(0);
         try(Session sesion = HibernateUtil.getSessionFactory().openSession()){
             Query<Company> query = sesion.createQuery("from Company ", Company.class);
