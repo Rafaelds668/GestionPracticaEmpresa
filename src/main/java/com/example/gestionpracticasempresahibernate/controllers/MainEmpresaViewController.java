@@ -173,10 +173,11 @@ public class MainEmpresaViewController implements Initializable {
 
     @javafx.fxml.FXML
     public void detalleEmpresa(ActionEvent actionEvent) {
-        Company selectedCompany = tvEmpresas.getSelectionModel().getSelectedItem();
-        if (selectedCompany != null){
-            if(Session.getCurrentStudent() != null) Main.loadFXML("editar-empresa-view.fxml", "Detalles de la empresa " + Session.getCurrentCompany().getCompany_name());
-        }else {
+        Company selectedComany = tvEmpresas.getSelectionModel().getSelectedItem();
+
+        if(selectedComany != null){
+            if (Session.getCurrentCompany() != null) Main.loadFXML("editar-empresa-view.fxml", "Editar empresa");
+        } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setContentText("Por favor, selecciona una empresa para modificarlo");
             alert.showAndWait();

@@ -67,11 +67,13 @@ public class EditarEmpresaViewController implements Initializable {
         company.setEmail(txtEmail.getText());
         company.setPhone_number(txtTelefono.getText());
         company.setIncidents(txtIncidentes.getText());
+        companyDAOImp.updateCompany(company);
+        volver();
 
     }
 
     @javafx.fxml.FXML
-    public void volver(ActionEvent actionEvent) {
+    public void volver() {
         Main.loadFXML("main-empresa-view.fxml", "Listado de empresas");
     }
 

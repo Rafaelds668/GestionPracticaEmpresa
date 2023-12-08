@@ -96,4 +96,18 @@ public class CompanyDAOImp implements DAO<Company> {
             t.commit( );
         }
     }
+
+    public void updateCompany (Company company) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            Company companySelected = session.get(Company.class, company.getCompany_id());
+
+            companySelected.setCompany_name(company.getCompany_name());
+            companySelected.setEmail(company.getEmail());
+            companySelected.setCompany_contact(company.getCompany_contact());
+            companySelected.setPhone_number(company.getPhone_number());
+            companySelected.setIncidents(company.getIncidents());
+            transaction.commit();
+        }
+    }
 }

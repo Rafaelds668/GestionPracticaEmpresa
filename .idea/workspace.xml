@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Hecho el fxml de editar tarea">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0d026c26-fa92-4f2e-bb7e-eb76b4b75970" name="Changes" comment="Realizado el MainEmpresa Y añadir una empresa en la BBDD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarEmpresaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/EditarEmpresaViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainEmpresaViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/controllers/MainEmpresaViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/company/CompanyDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionpracticasempresahibernate/domain/company/CompanyDAOImp.java" afterDir="false" />
     </list>
@@ -98,7 +98,7 @@
       <workItem from="1701774930733" duration="4338000" />
       <workItem from="1701939994286" duration="3687000" />
       <workItem from="1701973862202" duration="749000" />
-      <workItem from="1702025703484" duration="2718000" />
+      <workItem from="1702025703484" duration="4358000" />
     </task>
     <task id="LOCAL-00001" summary="Incluido en la tabla a los alumnos de los profesores">
       <option name="closed" value="true" />
@@ -180,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701776454241</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Realizado el MainEmpresa Y añadir una empresa en la BBDD">
+      <option name="closed" value="true" />
+      <created>1702028782561</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702028782562</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +217,7 @@
     <MESSAGE value="Hecho algo de codigo de MainEmpresaViewController (aun hay que tocar cosas)" />
     <MESSAGE value="Cambios en fxml de editar empresa (hecho) y el codigo del controller también, fxml de main empresa view, main view del alumno" />
     <MESSAGE value="Hecho el fxml de editar tarea" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hecho el fxml de editar tarea" />
+    <MESSAGE value="Realizado el MainEmpresa Y añadir una empresa en la BBDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Realizado el MainEmpresa Y añadir una empresa en la BBDD" />
   </component>
 </project>
