@@ -146,8 +146,57 @@ public class MainViewAlumnoController implements Initializable {
                 }
             }
         });
+        btnAñadir.setOnAction(this::onAñadirButtonClick);
+
     }
 
+    public void onAñadirButtonClick(ActionEvent actionEvent) {
+        // Obtener datos de los controles de la interfaz de usuario
+        String actividad = txtActividad.getText();
+        String observacion = txtObservacion.getText();
+        LocalDate fecha = dateFecha.getValue();
+        int totalHoras = spTotal.getValue();
+        PracticeType practiceType = comboPractica.getValue();
+
+        // Validar que los campos obligatorios no estén vacíos
+        if (actividad.isEmpty() || fecha == null || practiceType == null) {
+            mostrarAlerta("Error", "Por favor, completa todos los campos obligatorios.");
+            return;
+        }
+
+        // Crear una nueva instancia de Activity con los datos obtenidos
+        Activity nuevaActividad = new Activity();
+        nuevaActividad.setActivity_description(actividad);
+        nuevaActividad.setObservations(observacion);
+        nuevaActividad.setActivity_date(fecha);
+        nuevaActividad.setTotal_hours(totalHoras);
+        nuevaActividad.setPractice_type(practiceType);
+        nuevaActividad.setStudent(Session.getCurrentStudent());
+
+        // Guardar la nueva actividad en la base de datos
+        activityDAOImp.save(nuevaActividad);
+
+        // Actualizar la lista observable de actividades
+        activityObservableList.add(nuevaActividad);
+
+        // Limpiar los campos después de agregar la actividad
+        limpiarCampos();
+    }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
+    private void limpiarCampos() {
+        txtActividad.clear();
+        txtObservacion.clear();
+        dateFecha.setValue(null);
+        spTotal.getValueFactory().setValue(0);
+        comboPractica.getSelectionModel().selectFirst();
+    }
 
 
     public void logout(ActionEvent actionEvent){
