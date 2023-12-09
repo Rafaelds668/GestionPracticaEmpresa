@@ -23,11 +23,9 @@ public class EditarTareaViewController implements Initializable {
     @javafx.fxml.FXML
     private DatePicker dateFecha;
     @javafx.fxml.FXML
-    private Spinner<Integer> spHoras;
+    private Spinner <Integer> spHoras;
     @javafx.fxml.FXML
-    private RadioButton rbFCT;
-    @javafx.fxml.FXML
-    private RadioButton rbDual;
+    private ComboBox <PracticeType> comboPractica;
     @javafx.fxml.FXML
     private Button btnEliminar;
     @javafx.fxml.FXML
@@ -45,6 +43,8 @@ public class EditarTareaViewController implements Initializable {
         activityDAOImp = new ActivityDAOImp();
         Activity activity = Session.getCurrentActivity();
         Student student = Session.getCurrentStudent();
+
+        comboPractica.getItems().addAll(PracticeType.DUAL, PracticeType.FCT);
 
         txtActividad.setText(activity.getActivity_description());
         txtObservacion.setText(activity.getObservations());
@@ -73,9 +73,17 @@ public class EditarTareaViewController implements Initializable {
     public void editar(ActionEvent actionEvent) {
         Activity activity = Session.getCurrentActivity();
 
+        // Actualizar los datos del objeto Activity
         activity.setActivity_description(txtActividad.getText());
         activity.setObservations(txtObservacion.getText());
         activity.setActivity_date(dateFecha.getValue());
+        activity.setTotal_hours(spHoras.getValue());
+        activity.setPractice_type(comboPractica.getValue());
+
+        // Actualizar el objeto en la base de datos
+        activityDAOImp.update(activity);
+
+        Main.loadFXML("main-view-alumno.fxml", "Tareas del alumno " + Session.getCurrentStudent().getFirst_name());
     }
 
     @javafx.fxml.FXML
