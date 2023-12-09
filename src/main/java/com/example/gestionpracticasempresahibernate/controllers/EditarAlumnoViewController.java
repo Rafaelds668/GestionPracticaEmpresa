@@ -115,5 +115,4 @@ public class EditarAlumnoViewController implements Initializable {
         Session.setCurrentTeacher(null);
         Main.loadLogin("login-view.fxml");
     }
-
 }

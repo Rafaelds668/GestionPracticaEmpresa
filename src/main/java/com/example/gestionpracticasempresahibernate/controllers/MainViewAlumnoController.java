@@ -59,15 +59,15 @@ public class MainViewAlumnoController implements Initializable {
     private Label infoHorasFCT;
     @javafx.fxml.FXML
     private Label lblTitulo;
+    @javafx.fxml.FXML
+    private Button btnEditarTarea;
 
     private StudentDAOImp studentDAOImp = new StudentDAOImp();
-
    private ActivityDAOImp activityDAOImp = new ActivityDAOImp();
 
    private  ObservableList<Activity> activityObservableList;
-
-    @javafx.fxml.FXML
-    private Button btnEditarTarea;
+    int sumaHorasDual = 0;
+    int sumaHorasFCT = 0;
 
 
     public MainViewAlumnoController(){}
@@ -75,12 +75,7 @@ public class MainViewAlumnoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        lblTitulo.setText("Hola, " + Session.getCurrentStudent().getFirst_name());
-        infoHorasDual.setText("Horas realizadas dual: " + Session.getCurrentStudent().getTotal_dual_hours()+" Horas restantes dual: " + (100 -Session.getCurrentStudent().getTotal_dual_hours()));
-        infoHorasFCT.setText("Horas realizadas dual: " + Session.getCurrentStudent().getTotal_fct_hours()+" Horas restantes FCT: " + (50 -Session.getCurrentStudent().getTotal_fct_hours()));
-
         List<Activity> activityList = activityDAOImp.getAll();
-
 
         cActividad.setCellValueFactory((fila) ->{
             String actividad = String.valueOf(fila.getValue().getActivity_description());
@@ -147,6 +142,19 @@ public class MainViewAlumnoController implements Initializable {
             }
         });
         btnAñadir.setOnAction(this::onAñadirButtonClick);
+
+        // Iterar a través de la lista de actividades
+        for (Activity actividad : activityObservableList) {
+            if (actividad.getPractice_type() == PracticeType.DUAL) { // Verificar si la práctica es DUAL
+                sumaHorasDual += actividad.getTotal_hours(); // Sumar las horas de la actividad
+            }else {
+                sumaHorasFCT += actividad.getTotal_hours();
+            }
+        }
+
+        lblTitulo.setText("Hola, " + Session.getCurrentStudent().getFirst_name());
+        infoHorasFCT.setText("Horas realizadas dual: " + sumaHorasFCT+" Horas restantes FCT: " + (Session.getCurrentStudent().getTotal_fct_hours() - sumaHorasFCT));
+        infoHorasDual.setText("Horas realizadas dual: " + sumaHorasDual + " Horas restantes dual: " + (Session.getCurrentStudent().getTotal_dual_hours() - sumaHorasDual));
 
     }
 
@@ -223,11 +231,6 @@ public class MainViewAlumnoController implements Initializable {
                 "\nEmail: " + Session.getCurrentStudent().getTutor().getEmail());
         alert.showAndWait();
     }
-
-
-
-
-
 
     @javafx.fxml.FXML
     public void editarTarea(ActionEvent actionEvent) {

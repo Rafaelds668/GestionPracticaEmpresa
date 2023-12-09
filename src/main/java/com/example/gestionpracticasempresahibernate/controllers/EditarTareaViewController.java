@@ -50,12 +50,12 @@ public class EditarTareaViewController implements Initializable {
         txtObservacion.setText(activity.getObservations());
         dateFecha.setValue(activity.getActivity_date());
         if (activity.getPractice_type() == PracticeType.DUAL){
+            comboPractica.getSelectionModel().selectFirst();
             spHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, student.getTotal_dual_hours(), activity.getTotal_hours(), 1));
         }else {
+            comboPractica.getSelectionModel().select(PracticeType.FCT);
             spHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, student.getTotal_fct_hours(), activity.getTotal_hours(), 1));
         }
-
-        //TODO Aun hay que terminar: radioButtons y hacer el editar: valor de los spinner y radioButtons
     }
 
     @javafx.fxml.FXML
