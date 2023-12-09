@@ -10,7 +10,13 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementación concreta del DAO para la entidad Student.
+ * Proporciona métodos para realizar operaciones de acceso a datos específicas para la entidad Student.
+ */
 public class StudentDAOImp implements DAO<Student> {
+
+    // Implementación de métodos de la interfaz DAO
     @Override
     public List<Student> getAll() {
         var salida = new ArrayList<Student>(0);
@@ -83,7 +89,14 @@ public class StudentDAOImp implements DAO<Student> {
             session.remove(student);
         }));
     }
-    
+
+    /**
+     * Valida un usuario estudiante mediante su nombre de usuario y contraseña.
+     *
+     * @param user El nombre de usuario del estudiante.
+     * @param pass La contraseña del estudiante.
+     * @return El estudiante validado si coincide con el nombre de usuario y contraseña proporcionados.
+     */
     public Student validateUser(String user, String pass){
         //Desde un lambda no se puede escribir desde una variable externa.
         Student result = null;
@@ -107,6 +120,12 @@ public class StudentDAOImp implements DAO<Student> {
         return result;
     }
 
+    /**
+     * Obtiene una lista de actividades asociadas a un estudiante.
+     *
+     * @param student El estudiante del que se obtienen las actividades asociadas.
+     * @return Una lista de actividades asociadas al estudiante especificado.
+     */
     public List<Activity> actividadDeAlumno(Student student) {
         List<Activity> salida = new ArrayList<>( );
         try ( Session s = HibernateUtil.getSessionFactory( ).openSession( ) ) {

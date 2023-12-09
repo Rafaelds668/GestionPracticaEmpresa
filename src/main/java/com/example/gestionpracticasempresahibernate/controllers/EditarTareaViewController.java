@@ -15,6 +15,9 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la vista de edición de tareas.
+ */
 public class EditarTareaViewController implements Initializable {
     @javafx.fxml.FXML
     private TextField txtActividad;
@@ -37,7 +40,12 @@ public class EditarTareaViewController implements Initializable {
 
     ActivityDAOImp activityDAOImp;
 
-
+    /**
+     * Inicializa la vista con los datos de la actividad seleccionada.
+     *
+     * @param url             Ubicación relativa del recurso
+     * @param resourceBundle  Recurso localizable
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         activityDAOImp = new ActivityDAOImp();

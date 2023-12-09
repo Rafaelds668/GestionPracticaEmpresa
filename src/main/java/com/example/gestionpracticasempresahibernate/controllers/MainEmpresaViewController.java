@@ -2,10 +2,8 @@ package com.example.gestionpracticasempresahibernate.controllers;
 
 import com.example.gestionpracticasempresahibernate.Main;
 import com.example.gestionpracticasempresahibernate.domain.Session;
-import com.example.gestionpracticasempresahibernate.domain.activity.Activity;
 import com.example.gestionpracticasempresahibernate.domain.company.Company;
 import com.example.gestionpracticasempresahibernate.domain.company.CompanyDAOImp;
-import com.example.gestionpracticasempresahibernate.domain.student.Student;
 import com.example.gestionpracticasempresahibernate.domain.teacher.Teacher;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -22,6 +20,9 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Controlador para la vista principal de la gestión de empresas.
+ */
 public class MainEmpresaViewController implements Initializable {
     @javafx.fxml.FXML
     private TextField txtNombreEmpresa;
@@ -56,10 +57,17 @@ public class MainEmpresaViewController implements Initializable {
     @javafx.fxml.FXML
     private MenuItem menuCerrarSesion;
 
+    // Lista observable de empresas
     private ObservableList<Company> observableList;
     private CompanyDAOImp companyDAOImp = new CompanyDAOImp();
 
 
+    /**
+     * Inicializa la vista y carga la tabla con los datos de las empresas.
+     *
+     * @param url            URL de inicialización
+     * @param resourceBundle ResourceBundle asociado a la inicialización
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         companyDAOImp = new CompanyDAOImp();
@@ -82,6 +90,9 @@ public class MainEmpresaViewController implements Initializable {
 
     }
 
+    /**
+     * Carga la tabla con los datos de las empresas.
+     */
     private void cargarTabla() {
         CompanyDAOImp companyDAOImp = new CompanyDAOImp();
         List<Company> companyList = companyDAOImp.getAll();
@@ -114,6 +125,11 @@ public class MainEmpresaViewController implements Initializable {
 
     }
 
+    /**
+     * Maneja la inserción de una nueva empresa.
+     *
+     * @param actionEvent Evento de acción asociado al botón "Añadir"
+     */
     @javafx.fxml.FXML
     public void insertCompany(ActionEvent actionEvent) {
         if(txtNombreEmpresa.getText().length()<2){
@@ -144,6 +160,12 @@ public class MainEmpresaViewController implements Initializable {
         }
     }
 
+    /**
+     * Verifica el formato del correo electrónico.
+     *
+     * @param email Correo electrónico a validar
+     * @return true si el correo tiene un formato válido, false en caso contrario
+     */
     private boolean comprobarEmail( String email ) {
         boolean salida;
         // Patrón para validar el email
@@ -161,6 +183,12 @@ public class MainEmpresaViewController implements Initializable {
         return salida;
     }
 
+    /**
+     * Verifica el formato del número de teléfono.
+     *
+     * @param tel Número de teléfono a validar
+     * @return true si el número tiene un formato válido, false en caso contrario
+     */
     private boolean comprobarTelefono( String tel ) {
         boolean salida = true;
         try {
@@ -171,6 +199,11 @@ public class MainEmpresaViewController implements Initializable {
         return salida;
     }
 
+    /**
+     * Abre la vista para editar los detalles de una empresa seleccionada.
+     *
+     * @param actionEvent Evento de acción asociado al botón "Ver Empresa"
+     */
     @javafx.fxml.FXML
     public void detalleEmpresa(ActionEvent actionEvent) {
         Company selectedComany = tvEmpresas.getSelectionModel().getSelectedItem();
@@ -184,12 +217,22 @@ public class MainEmpresaViewController implements Initializable {
         }
     }
 
+    /**
+     * Abre la vista para mostrar la lista de alumnos.
+     *
+     * @param actionEvent Evento de acción asociado al menú "Alumnos"
+     */
     @javafx.fxml.FXML
     public void alumnos(ActionEvent actionEvent) {
         Main.loadFXML("main-view-profesor.fxml", "Listado de empresas" );
     }
 
 
+    /**
+     * Realiza el cierre de sesión.
+     *
+     * @param actionEvent Evento de acción asociado al menú "Cerrar Sesión"
+     */
     @javafx.fxml.FXML
     public void logout(ActionEvent actionEvent) {
         Session.setCurrentTeacher(null);

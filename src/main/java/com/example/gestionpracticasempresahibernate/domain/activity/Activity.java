@@ -10,6 +10,9 @@ import com.example.gestionpracticasempresahibernate.domain.activity.PracticeType
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Clase que representa una actividad relacionada con un estudiante en la gestión de prácticas empresariales.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

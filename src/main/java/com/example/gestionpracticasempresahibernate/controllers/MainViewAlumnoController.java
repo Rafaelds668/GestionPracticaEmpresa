@@ -27,6 +27,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la vista principal de un alumno en la aplicación de gestión de prácticas empresariales.
+ * Permite la gestión de actividades, visualización de datos y navegación entre vistas en una aplicación JavaFX.
+ */
 public class MainViewAlumnoController implements Initializable {
 
     @javafx.fxml.FXML
@@ -72,6 +76,12 @@ public class MainViewAlumnoController implements Initializable {
 
     public MainViewAlumnoController(){}
 
+    /**
+     * Inicializa la vista del controlador y carga los datos iniciales.
+     *
+     * @param url             URL de la ubicación para resolver rutas relativas de recursos.
+     * @param resourceBundle  Los recursos localizados.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -158,6 +168,7 @@ public class MainViewAlumnoController implements Initializable {
 
     }
 
+    // Método para el botón "Añadir" que agrega una nueva actividad
     public void onAñadirButtonClick(ActionEvent actionEvent) {
         // Obtener datos de los controles de la interfaz de usuario
         String actividad = txtActividad.getText();
@@ -191,6 +202,7 @@ public class MainViewAlumnoController implements Initializable {
         limpiarCampos();
     }
 
+    // Método para mostrar una alerta con un título y un mensaje específico
     private void mostrarAlerta(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(titulo);
@@ -198,6 +210,7 @@ public class MainViewAlumnoController implements Initializable {
         alert.showAndWait();
     }
 
+    // Método para limpiar los campos de entrada después de agregar una actividad
     private void limpiarCampos() {
         txtActividad.clear();
         txtObservacion.clear();
@@ -206,12 +219,13 @@ public class MainViewAlumnoController implements Initializable {
         comboPractica.getSelectionModel().selectFirst();
     }
 
-
+    // Método para cerrar sesión del alumno y volver a la pantalla de inicio de sesión
     public void logout(ActionEvent actionEvent){
         Session.setCurrentStudent(null);
         Main.loadLogin("login-view.fxml");
     }
 
+    // Método para mostrar información sobre la empresa asociada al alumno
     public void informacionEmpresa(ActionEvent actionEvent){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Informacion Adicional");
@@ -222,6 +236,7 @@ public class MainViewAlumnoController implements Initializable {
         alert.showAndWait();
     }
 
+    // Método para mostrar información sobre el tutor del alumno
     public void informacionTutor (ActionEvent actionEvent){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Informacion Adicional");
@@ -232,6 +247,7 @@ public class MainViewAlumnoController implements Initializable {
         alert.showAndWait();
     }
 
+    // Método para el botón "Editar Tarea" que permite editar una actividad seleccionada
     @javafx.fxml.FXML
     public void editarTarea(ActionEvent actionEvent) {
         Activity selectedActivity = tvActividad.getSelectionModel().getSelectedItem();

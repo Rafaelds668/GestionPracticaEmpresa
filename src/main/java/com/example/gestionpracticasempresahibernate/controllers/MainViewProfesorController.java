@@ -23,6 +23,10 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Controlador para la vista principal de un profesor en la aplicación de gestión de prácticas empresariales.
+ * Permite la gestión de estudiantes, visualización de datos y navegación entre vistas en una aplicación JavaFX.
+ */
 public class MainViewProfesorController implements Initializable {
 
     TeacherDAOImp teacherDAOImp;
@@ -75,6 +79,12 @@ public class MainViewProfesorController implements Initializable {
     @javafx.fxml.FXML
     private MenuItem menuEmpresas;
 
+    /**
+     * Inicializa la vista del controlador y carga los datos iniciales.
+     *
+     * @param url             URL de la ubicación para resolver rutas relativas de recursos.
+     * @param resourceBundle  Los recursos localizados.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         teacherDAOImp = new TeacherDAOImp();
@@ -96,6 +106,9 @@ public class MainViewProfesorController implements Initializable {
 
     }
 
+    /**
+     * Carga los datos de los estudiantes en la tabla de la interfaz gráfica.
+     */
     private void cargarTabla() {
         Teacher teacher = Session.getCurrentTeacher();
         //TeacherDAOImp teacherDAOImp1 = new TeacherDAOImp();
@@ -207,6 +220,12 @@ public class MainViewProfesorController implements Initializable {
 
     }
 
+    /**
+     * Verifica si el formato del DNI es válido.
+     *
+     * @param dni El número de identificación a validar.
+     * @return    true si el formato del DNI es válido, de lo contrario false.
+     */
     private boolean comprobarDNI (String dni){
         boolean salida = true;
         if(dni.length() != 9 || !Character.isLetter(dni.charAt(8))) salida = false;
@@ -220,6 +239,12 @@ public class MainViewProfesorController implements Initializable {
         return salida;
     }
 
+    /**
+     * Verifica si el formato del correo electrónico es válido.
+     *
+     * @param email El correo electrónico a validar.
+     * @return      true si el formato del correo electrónico es válido, de lo contrario false.
+     */
     private boolean comprobarEmail( String email ) {
         boolean salida;
         // Patrón para validar el email
@@ -237,6 +262,12 @@ public class MainViewProfesorController implements Initializable {
         return salida;
     }
 
+    /**
+     * Verifica si el formato del número de teléfono es válido.
+     *
+     * @param tel El número de teléfono a validar.
+     * @return    true si el formato del número de teléfono es válido, de lo contrario false.
+     */
     private boolean comprobarTelefono( String tel ) {
         boolean salida = true;
         try {
@@ -247,6 +278,11 @@ public class MainViewProfesorController implements Initializable {
         return salida;
     }
 
+    /**
+     * RCarga los detalles del alumno.
+     *
+     * @param actionEvent Evento de acción asociado al menú "Detalles del alumno"
+     */
     @javafx.fxml.FXML
     public void detallesAlumno(ActionEvent actionEvent) {
         Student selectedStudent = tvAlumnos.getSelectionModel().getSelectedItem();
@@ -264,6 +300,11 @@ public class MainViewProfesorController implements Initializable {
         Main.loadFXML("main-empresa-view.fxml", "Listado de empresas" );
     }
 
+    /**
+     * Realiza el cierre de sesión.
+     *
+     * @param actionEvent Evento de acción asociado al menú "Cerrar Sesión"
+     */
     public void logout(ActionEvent actionEvent){
         Session.setCurrentTeacher(null);
         Main.loadLogin("login-view.fxml");

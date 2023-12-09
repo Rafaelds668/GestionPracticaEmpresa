@@ -12,8 +12,14 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementación concreta del DAO para la entidad Teacher.
+ * Proporciona métodos para realizar operaciones de acceso a datos específicas para la entidad Teacher.
+ */
 @Log
 public class TeacherDAOImp implements DAO<Teacher> {
+
+    // Implementación de métodos de la interfaz DAO
     @Override
     public List<Teacher> getAll() {
         var salida = new ArrayList<Teacher>(0);
@@ -87,6 +93,12 @@ public class TeacherDAOImp implements DAO<Teacher> {
         }));
     }
 
+    /**
+     * Obtiene una lista de estudiantes asignados a un profesor.
+     *
+     * @param teacher El profesor del que se obtienen los estudiantes asignados.
+     * @return Una lista de estudiantes asignados al profesor especificado.
+     */
     //Obteniene el profesor del alumno, la cual se usa para inicializar la tabla e incluir los datos
     public List<Student> alumnoDeProfesor(Teacher teacher ) {
         List<Student> salida = new ArrayList<>( );
@@ -98,6 +110,12 @@ public class TeacherDAOImp implements DAO<Teacher> {
         return salida;
     }
 
+    /**
+     * Obtiene un estudiante por su identificador.
+     *
+     * @param id El identificador del estudiante.
+     * @return El estudiante correspondiente al identificador especificado.
+     */
     //Obtiene el id del alumno, usado para meter en un lista al usuario
     public Student alumnoPorId( Long id ) {
         Student salida = null;
@@ -109,6 +127,12 @@ public class TeacherDAOImp implements DAO<Teacher> {
         return salida;
     }
 
+    /**
+     * Obtiene una compañía por su nombre.
+     *
+     * @param companyName El nombre de la compañía.
+     * @return La compañía correspondiente al nombre especificado.
+     */
     //Obtiene el nombre de la compañía para usarlo en el combobox
     public Company nombreCompañia(String companyName ) {
         Company salida = null;
@@ -120,6 +144,13 @@ public class TeacherDAOImp implements DAO<Teacher> {
         return salida;
     }
 
+    /**
+     * Valida un usuario profesor mediante su nombre de usuario y contraseña.
+     *
+     * @param user El nombre de usuario del profesor.
+     * @param pass La contraseña del profesor.
+     * @return El profesor validado si coincide con el nombre de usuario y contraseña proporcionados.
+     */
     public Teacher validateUser(String user, String pass){
 
         //Desde un lambda no se puede escribir desde una variable externa.
@@ -144,6 +175,11 @@ public class TeacherDAOImp implements DAO<Teacher> {
         return result;
     }
 
+    /**
+     * Añade un nuevo alumno.
+     *
+     * @param student El alumno a añadir.
+     */
     public void addAlumno(Student student) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Transaction transaction = session.beginTransaction();
@@ -169,6 +205,11 @@ public class TeacherDAOImp implements DAO<Teacher> {
         }
     }
 
+    /**
+     * Elimina un alumno existente.
+     *
+     * @param alumno El alumno a eliminar.
+     */
     public void deleteAlumno(Student alumno){
         HibernateUtil.getSessionFactory().inTransaction((session -> {
             Student student = session.get(Student.class, alumno.getStudent_id());
@@ -176,6 +217,11 @@ public class TeacherDAOImp implements DAO<Teacher> {
         }));
     }
 
+    /**
+     * Actualiza la información de un alumno existente.
+     *
+     * @param student La información actualizada del alumno.
+     */
     public void updateAlumno (Student student){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Transaction transaction = session.beginTransaction();

@@ -10,7 +10,13 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementación concreta del DAO para la entidad Company.
+ * Proporciona métodos para realizar operaciones de acceso a datos específicas para la entidad Company.
+ */
 public class CompanyDAOImp implements DAO<Company> {
+
+    // Implementación de métodos de la interfaz DAO
     @Override
     public List<Company> getAll() {
         var salida = new ArrayList<Company>(0);
@@ -83,6 +89,12 @@ public class CompanyDAOImp implements DAO<Company> {
             session.remove(company);
         }));
     }
+
+    /**
+     * Inserta una nueva compañía en la base de datos.
+     *
+     * @param company La compañía que se va a insertar.
+     */
     public void insertCompany(Company company){
         try ( org.hibernate.Session s = HibernateUtil.getSessionFactory( ).openSession( ) ) {
             Transaction t = s.beginTransaction( );
@@ -98,6 +110,11 @@ public class CompanyDAOImp implements DAO<Company> {
         }
     }
 
+    /**
+     * Actualiza la información de una compañía en la base de datos.
+     *
+     * @param company La compañía con la información actualizada que se va a actualizar en la base de datos.
+     */
     public void updateCompany (Company company) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();

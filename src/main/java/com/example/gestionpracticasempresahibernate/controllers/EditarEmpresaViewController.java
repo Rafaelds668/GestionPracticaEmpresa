@@ -12,6 +12,9 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la vista de edición de empresas.
+ */
 public class EditarEmpresaViewController implements Initializable {
     @javafx.fxml.FXML
     private MenuItem menuLogout;
@@ -35,6 +38,12 @@ public class EditarEmpresaViewController implements Initializable {
     CompanyDAOImp companyDAOImp;
 
 
+    /**
+     * Inicializa la vista con los datos de la empresa seleccionada.
+     *
+     * @param url             Ubicación relativa del recurso
+     * @param resourceBundle  Recurso localizable
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         companyDAOImp = new CompanyDAOImp();

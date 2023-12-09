@@ -12,6 +12,9 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clase que representa a un estudiante en el sistema.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -45,6 +48,11 @@ public class Student {
     private Teacher tutor;
 
 
+    /**
+     * Devuelve una representación en cadena de texto de la información del estudiante.
+     *
+     * @return Una cadena de texto que representa la información del estudiante.
+     */
     public String toString( ) {
 
         String nombreTutor = "Sin tutor asignado";

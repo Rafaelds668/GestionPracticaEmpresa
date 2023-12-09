@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la vista de edición de alumnos.
+ */
 public class EditarAlumnoViewController implements Initializable {
     @javafx.fxml.FXML
     private TextField txtNombre;
@@ -49,6 +52,12 @@ public class EditarAlumnoViewController implements Initializable {
     CompanyDAOImp companyDAOImp;
     TeacherDAOImp teacherDAOImp;
 
+    /**
+     * Inicializa la vista con los datos del alumno seleccionado.
+     *
+     * @param url             Ubicación relativa del recurso
+     * @param resourceBundle  Recurso localizable
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         companyDAOImp = new CompanyDAOImp();

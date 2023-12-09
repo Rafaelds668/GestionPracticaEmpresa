@@ -9,7 +9,17 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementación concreta del DAO para la entidad Activity.
+ * Proporciona métodos para realizar operaciones de acceso a datos específicas para la entidad Activity.
+ */
 public class ActivityDAOImp implements DAO<Activity> {
+
+    /**
+     * Obtiene todas las actividades almacenadas en la base de datos.
+     *
+     * @return Una lista de todas las actividades almacenadas.
+     */
     @Override
     public List<Activity> getAll() {
         //Creo una lista de Activity para almacenar los estudiantes
@@ -24,6 +34,12 @@ public class ActivityDAOImp implements DAO<Activity> {
         return result;
     }
 
+    /**
+     * Obtiene una actividad por su identificador único.
+     *
+     * @param id El identificador único de la actividad a buscar.
+     * @return La actividad encontrada, o null si no se encuentra ninguna actividad con el ID especificado.
+     */
     @Override
     public Activity get(Long id) {
         var salida = new Activity();
@@ -33,6 +49,12 @@ public class ActivityDAOImp implements DAO<Activity> {
         return salida;
     }
 
+    /**
+     * Guarda una nueva actividad en la base de datos.
+     *
+     * @param data La actividad que se va a guardar.
+     * @return La actividad guardada.
+     */
     @Override
     public Activity save(Activity data) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -57,6 +79,11 @@ public class ActivityDAOImp implements DAO<Activity> {
         }
     }
 
+    /**
+     * Actualiza una actividad existente en la base de datos.
+     *
+     * @param data La actividad que se va a actualizar.
+     */
     @Override
     public void update(Activity data) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -79,6 +106,11 @@ public class ActivityDAOImp implements DAO<Activity> {
         }
     }
 
+    /**
+     * Elimina una actividad de la base de datos.
+     *
+     * @param data La actividad que se va a eliminar.
+     */
     @Override
     public void delete(Activity data) {
         HibernateUtil.getSessionFactory().inTransaction((session -> {

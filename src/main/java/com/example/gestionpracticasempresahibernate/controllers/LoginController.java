@@ -17,6 +17,9 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la vista de inicio de sesión.
+ */
 public class LoginController implements Initializable {
     @FXML
     private TextField txtUsuario;
@@ -29,6 +32,12 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
+
+    /**
+     * Realiza la validación del inicio de sesión al presionar el botón "Iniciar Sesión".
+     *
+     * @param actionEvent Evento de acción asociado al botón "Iniciar Sesión"
+     */
     @FXML
     public void login(ActionEvent actionEvent) {
         String user = txtUsuario.getText();

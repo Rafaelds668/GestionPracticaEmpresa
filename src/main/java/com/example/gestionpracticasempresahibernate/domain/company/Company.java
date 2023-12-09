@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Clase que representa a una compañía en el sistema.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

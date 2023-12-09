@@ -7,6 +7,10 @@ import com.example.gestionpracticasempresahibernate.domain.teacher.Teacher;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Clase que representa una sesión de la aplicación.
+ * Contiene información sobre el usuario actual y su contexto de sesión.
+ */
 public class Session {
 
     @Getter

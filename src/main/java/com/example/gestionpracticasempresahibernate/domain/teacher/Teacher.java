@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Clase que representa a un profesor en el sistema.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -26,8 +29,14 @@ public class Teacher {
 
     @OneToMany(mappedBy = "tutor", fetch = FetchType.EAGER)
     private List<Student> students;
+
+    /**
+     * Devuelve una representación en cadena de texto de la información del profesor.
+     *
+     * @return Una cadena de texto que representa la información del profesor.
+     */
     @Override
-    public String toString( ) {
+    public String toString() {
         return "Teacher{" +
                 "teacher_id=" + teacher_id +
                 ", first_name='" + first_name + '\'' +
